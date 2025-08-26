@@ -1,60 +1,32 @@
 // Mobile menu toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const nav = document.querySelector('nav');
-    
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            nav.classList.toggle('active');
-        });
-    }
-    
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("callbackForm");
+    const responseDiv = document.getElementById("formResponse");
+    if (form) {
+        form.addEventListener("submit", function(e) {
             e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const headerHeight = document.querySelector('header').offsetHeight;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                if (nav.classList.contains('active')) {
-                    nav.classList.remove('active');
+            const data = new FormData(form);
+            fetch(form.action, {
+                method: "POST",
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
                 }
-            }
-        });
-    });
-    
-    // Form submission handling
-    const callbackForm = document.getElementById('callbackForm');
-    if (callbackForm) {
-        callbackForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const location = document.getElementById('location').value;
-            const issue = document.getElementById('issue').value;
-            
-            // In a real application, you would send this data to your server
-            // For this example, we'll just show an alert
-            alert(`Thank you ${name}! We'll call you at ${phone} shortly. Our plumber near ${location} will contact you about your ${issue} issue.`);
-            
-            // Reset form
-            callbackForm.reset();
+            }).then(response => {
+                if (response.ok) {
+                    responseDiv.style.display = "block";
+                    responseDiv.style.color = "green";
+                    responseDiv.textContent = "Thank you! Your enquiry has been sent.";
+                    form.reset();
+                } else {
+                    responseDiv.style.display = "block";
+                    responseDiv.style.color = "red";
+                    responseDiv.textContent = "Oops! There was a problem submitting your enquiry.";
+                }
+            });
         });
     }
+});
     
     // Add structured data for SEO
     const structuredData = {

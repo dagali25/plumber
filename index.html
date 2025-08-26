@@ -210,25 +210,26 @@
                 </div>
                 <div class="contact-form">
                     <h3>Request a Callback</h3>
-                    <form id="callbackForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="location">Location</label>
-                            <input type="text" id="location" name="location" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="issue">Describe Your Issue</label>
-                            <textarea id="issue" name="issue" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Request Callback</button>
-                    </form>
+                    <form id="callbackForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+						<div class="form-group">
+							<label for="name">Your Name</label>
+							<input type="text" id="name" name="name" required>
+						</div>
+						<div class="form-group">
+							<label for="phone">Phone Number</label>
+							<input type="tel" id="phone" name="phone" required>
+						</div>
+						<div class="form-group">
+							<label for="location">Location</label>
+							<input type="text" id="location" name="location" required>
+						</div>
+						<div class="form-group">
+							<label for="issue">Describe Your Issue</label>
+							<textarea id="issue" name="issue" rows="3"></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary">Request Callback</button>
+					</form>
+<div id="formResponse" style="display:none; margin-top:10px"></div>
                 </div>
             </div>
         </div>

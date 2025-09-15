@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plumbing Website Sitemap</title>
+    <title>XML Sitemap - Berkshire Emergency Plumbers</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,148 +14,144 @@
         }
         
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
             color: #2c3e50;
             min-height: 100vh;
             padding: 20px;
+            line-height: 1.6;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
         
         header {
+            background: #3498db;
+            color: white;
+            padding: 30px;
             text-align: center;
-            padding: 30px 0;
-            margin-bottom: 30px;
         }
         
         h1 {
-            font-size: 2.8rem;
-            color: #2c3e50;
-            margin-bottom: 15px;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
         
         .subtitle {
             font-size: 1.2rem;
-            color: #7f8c8d;
-            max-width: 800px;
-            margin: 0 auto;
+            opacity: 0.9;
         }
         
-        .sitemap {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .home-page {
-            background: #3498db;
-            color: white;
-            padding: 20px 40px;
-            border-radius: 10px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 40px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .home-page i {
-            margin-right: 10px;
-        }
-        
-        .main-sections {
+        .content {
+            padding: 30px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 40px;
         }
         
-        .section {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            width: 250px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
+        .explanation {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
         }
         
-        .section h2 {
+        .explanation h2 {
             color: #3498db;
-            font-size: 1.4rem;
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid #3498db;
-            display: flex;
-            align-items: center;
         }
         
-        .section h2 i {
-            margin-right: 10px;
+        .explanation ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
         }
         
-        .pages {
-            list-style-type: none;
+        .explanation li {
+            margin-bottom: 10px;
         }
         
-        .pages li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-        }
-        
-        .pages li:last-child {
-            border-bottom: none;
-        }
-        
-        .pages li i {
-            margin-right: 10px;
-            color: #3498db;
-        }
-        
-        .connector {
-            position: absolute;
-            top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 40px;
-            width: 2px;
-            background: #3498db;
-        }
-        
-        .footer-pages {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-        }
-        
-        .footer-page {
-            background: #95a5a6;
-            color: white;
-            padding: 15px 25px;
+        .code-container {
+            flex: 1;
+            min-width: 300px;
+            background: #2c3e50;
+            color: #f8f8f2;
             border-radius: 8px;
-            font-weight: 500;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow-x: auto;
+        }
+        
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .xml-tag {
+            color: #f92672;
+        }
+        
+        .xml-attr {
+            color: #a6e22e;
+        }
+        
+        .xml-value {
+            color: #e6db74;
+        }
+        
+        .xml-comment {
+            color: #75715e;
+        }
+        
+        .actions {
+            padding: 20px;
+            text-align: center;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #2c3e50;
+        }
+        
+        .btn-secondary:hover {
+            background: #1a252f;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
-            .main-sections {
+            .content {
                 flex-direction: column;
-                align-items: center;
             }
             
-            .section {
-                width: 100%;
-                max-width: 350px;
+            .code-container {
+                margin-top: 20px;
             }
         }
     </style>
@@ -163,115 +159,179 @@
 <body>
     <div class="container">
         <header>
-            <h1>Website Sitemap</h1>
-            <p class="subtitle">Visual representation of the website structure for Berkshire Emergency Plumbers</p>
+            <h1>XML Sitemap Generator</h1>
+            <p class="subtitle">For Berkshire Emergency Plumbers Website</p>
         </header>
         
-        <div class="sitemap">
-            <div class="home-page">
-                <i class="fas fa-home"></i> Homepage
+        <div class="content">
+            <div class="explanation">
+                <h2>About XML Sitemaps</h2>
+                <p>An XML sitemap is a file that lists all important pages of a website to tell search engines about the organization of its content. Search engines like Google use this file to more intelligently crawl your website.</p>
+                
+                <p>This sitemap includes:</p>
+                <ul>
+                    <li>All main pages of your website</li>
+                    <li>Last modification dates</li>
+                    <li>Change frequency indicators</li>
+                    <li>Priority levels for each page</li>
+                </ul>
+                
+                <p>To use this sitemap:</p>
+                <ol>
+                    <li>Copy the XML code</li>
+                    <li>Save it as "sitemap.xml" in your website's root directory</li>
+                    <li>Submit it to Google Search Console and other search engines</li>
+                </ol>
+                
+                <p>For a plumbing business, it's especially important to have an updated sitemap so search engines can quickly discover your service pages and emergency contact information.</p>
             </div>
             
-            <div class="main-sections">
-                <div class="section">
-                    <div class="connector"></div>
-                    <h2><i class="fas fa-wrench"></i> Services</h2>
-                    <ul class="pages">
-                        <li><i class="fas fa-faucet"></i> Burst Pipes</li>
-                        <li><i class="fas fa-shower"></i> Blocked Drains</li>
-                        <li><i class="fas fa-fire"></i> Boiler Repairs</li>
-                        <li><i class="fas fa-tint"></i> Leak Detection</li>
-                        <li><i class="fas fa-toilet"></i> Toilet Repairs</li>
-                    </ul>
-                </div>
-                
-                <div class="section">
-                    <div class="connector"></div>
-                    <h2><i class="fas fa-info-circle"></i> About</h2>
-                    <ul class="pages">
-                        <li><i class="fas fa-history"></i> Our Story</li>
-                        <li><i class="fas fa-users"></i> Our Team</li>
-                        <li><i class="fas fa-award"></i> Certifications</li>
-                        <li><i class="fas fa-truck"></i> Service Areas</li>
-                    </ul>
-                </div>
-                
-                <div class="section">
-                    <div class="connector"></div>
-                    <h2><i class="fas fa-comments"></i> Testimonials</h2>
-                    <ul class="pages">
-                        <li><i class="fas fa-star"></i> Customer Reviews</li>
-                        <li><i class="fas fa-building"></i> Case Studies</li>
-                        <li><i class="fas fa-camera"></i> Before & After</li>
-                    </ul>
-                </div>
-                
-                <div class="section">
-                    <div class="connector"></div>
-                    <h2><i class="fas fa-address-book"></i> Contact</h2>
-                    <ul class="pages">
-                        <li><i class="fas fa-phone"></i> Call Us</li>
-                        <li><i class="fas fa-envelope"></i> Email Us</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Service Area</li>
-                        <li><i class="fas fa-clock"></i> Emergency Hours</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-pages">
-                <div class="footer-page">Privacy Policy</div>
-                <div class="footer-page">Terms of Service</div>
-                <div class="footer-page">FAQ</div>
-                <div class="footer-page">Careers</div>
-                <div class="footer-page">Blog</div>
+            <div class="code-container">
+                <pre><code><span class="xml-tag">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="xml-tag">&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;</span>
+  <span class="xml-comment">&lt;!-- Homepage --&gt;</span>
+  <span class="xml-tag">&lt;url&gt;</span>
+    <span class="xml-tag">&lt;loc&gt;</span><span class="xml-value">https://www.berkshireemergencyplumbers.example.com/</span><span class="xml-tag">&lt;/loc&gt;</span>
+    <span class="xml-tag">&lt;lastmod&gt;</span><span class="xml-value">2023-09-15</span><span class="xml-tag">&lt;/lastmod&gt;</span>
+    <span class="xml-tag">&lt;changefreq&gt;</span><span class="xml-value">monthly</span><span class="xml-tag">&lt;/changefreq&gt;</span>
+    <span class="xml-tag">&lt;priority&gt;</span><span class="xml-value">1.0</span><span class="xml-tag">&lt;/priority&gt;</span>
+  <span class="xml-tag">&lt;/url&gt;</span>
+
+  <span class="xml-comment">&lt;!-- Services Pages --&gt;</span>
+  <span class="xml-tag">&lt;url&gt;</span>
+    <span class="xml-tag">&lt;loc&gt;</span><span class="xml-value">https://www.berkshireemergencyplumbers.example.com/services/</span><span class="xml-tag">&lt;/loc&gt;</span>
+    <span class="xml-tag">&lt;lastmod&gt;</span><span class="xml-value">2023-09-10</span><span class="xml-tag">&lt;/lastmod&gt;</span>
+    <span class="xml-tag">&lt;changefreq&gt;</span><span class="xml-value">monthly</span><span class="xml-tag">&lt;/changefreq&gt;</span>
+    <span class="xml-tag">&lt;priority&gt;</span><span class="xml-value">0.9</span><span class="xml-tag">&lt;/priority&gt;</span>
+  <span class="xml-tag">&lt;/url&gt;</span>
+  
+  <span class="xml-tag">&lt;url&gt;</span>
+    <span class="xml-tag">&lt;loc&gt;</span><span class="xml-value">https://www.berkshireemergencyplumbers.example.com/services/burst-pipes/</span><span class="xml-tag">&lt;/loc&gt;</span>
+    <span class="xml-tag">&lt;lastmod&gt;</span><span class="xml-value">2023-08-25</span><span class="xml-tag">&lt;/lastmod&gt;</span>
+    <span class="xml-tag">&lt;changefreq&gt;</span><span class="xml-value">monthly</span><span class="xml-tag">&lt;/changefreq&gt;</span>
+    <span class="xml-tag">&lt;priority&gt;</span><span class="xml-value">0.8</span><span class="xml-tag">&lt;/priority&gt;</span>
+  <span class="xml-tag">&lt;/url&gt;</span>
+  
+  <span class="xml-tag">&lt;url&gt;</span>
+    <span class="xml-tag">&lt;loc&gt;</span><span class="xml-value">https://www.berkshireemergencyplumbers.example.com/services/blocked-drains/</span><span class="xml-tag">&lt;/loc&gt;</span>
+    <span class="xml-tag">&lt;lastmod&gt;</span><span class="xml-value">2023-08-20</span><span class="xml-tag">&lt;/lastmod&gt;</span>
+    <span class="xml-tag">&lt;changefreq&gt;</span><span class="xml-value">monthly</span><span class="xml-tag">&lt;/changefreq&gt;</span>
+    <span class="xml-tag">&lt;priority&gt;</span><span class="xml-value">0.8</span><span class="xml-tag">&lt;/priority&gt;</span>
+  <span class="xml-tag">&lt;/url&gt;</span>
+  
+  <span class="xml-tag">&lt;url&gt;</span>
+    <span class="xml-tag">&lt;loc&gt;</span><span class="xml-value">https://www.berkshireemergencyplumbers.example.com/services/boiler-repairs/</span><span class="xml-tag">&lt;/loc&gt;</span>
+    <span class="xml-tag">&lt;lastmod&gt;</span><span class="xml-value">2023-08-15</span><span class="xml-tag">&lt;/lastmod&gt;</span>
+    <span class="xml-tag">&lt;changefreq&gt;</span><span class="xml-value">monthly</span><span class="xml-tag">&lt;/changefreq&gt;</span>
+    <span class="xml-tag">&lt;priority&gt;</span><span class="xml-value">0.8</span><span class="xml-tag">&lt;/priority&gt;</span>
+  <span class="xml-tag">&lt;/url&gt;</span>
+
+  <span class="xml-comment">&lt;!-- About Pages --&gt;</span>
+  <span class="xml-tag">&lt;url&gt;</span>
+    <span class="xml-tag">&lt;loc&gt;</span><span class="xml-value">https://www.berkshireemergencyplumbers.example.com/about/</span><span class="xml-tag">&lt;/loc&gt;</span>
+    <span class="xml-tag">&lt;lastmod&gt;</span><span class="xml-value">2023-07-10</span><span class="xml-tag">&lt;/lastmod&gt;</span>
+    <span class="xml-tag">&lt;changefreq&gt;</span><span class="xml-value">yearly</span><span class="xml-tag">&lt;/changefreq&gt;</span>
+    <span class="xml-tag">&lt;priority&gt;</span><span class="xml-value">0.7</span><span class="xml-tag">&lt;/priority&gt;</span>
+  <span class="xml-tag">&lt;/url&gt;</span>
+  
+  <span class="xml-tag">&lt;url&gt;</span>
+    <span class="xml-tag">&lt;loc&gt;</span><span class="xml-value">https://www.berkshireemergencyplumbers.example.com/about/team/</span><span class="xml-tag">&lt;/loc&gt;</span>
+    <span class="xml-tag">&lt;lastmod&gt;</span><span class="xml-value">2023-06-15</span><span class="xml-tag">&lt;/lastmod&gt;</span>
+    <span class="xml-tag">&lt;changefreq&gt;</span><span class="xml-value">yearly</span><span class="xml-tag">&lt;/changefreq&gt;</span>
+    <span class="xml-tag">&lt;priority&gt;</span><span class="xml-value">0.6</span><span class="xml-tag">&lt;/priority&gt;</span>
+  <span class="xml-tag">&lt;/url&gt;</span>
+  
+  <span class="xml-tag">&lt;url&gt;</span>
+    <span class="xml-tag">&lt;loc&gt;</span><span class="xml-value">https://www.berkshireemergencyplumbers.example.com/about/service-areas/</span><span class="xml-tag">&lt;/loc&gt;</span>
+    <span class="xml-tag">&lt;lastmod&gt;</span><span class="xml-value">2023-09-01</span><span class="xml-tag">&lt;/lastmod&gt;</span>
+    <span class="xml-tag">&lt;changefreq&gt;</span><span class="xml-value">monthly</span><span class="xml-tag">&lt;/changefreq&gt;</span>
+    <span class="xml-tag">&lt;priority&gt;</span><span class="xml-value">0.8</span><span class="xml-tag">&lt;/priority&gt;</span>
+  <span class="xml-tag">&lt;/url&gt;</span>
+
+  <span class="xml-comment">&lt;!-- Testimonials --&gt;</span>
+  <span class="xml-tag">&lt;url&gt;</span>
+    <span class="xml-tag">&lt;loc&gt;</span><span class="xml-value">https://www.berkshireemergencyplumbers.example.com/testimonials/</span><span class="xml-tag">&lt;/loc&gt;</span>
+    <span class="xml-tag">&lt;lastmod&gt;</span><span class="xml-value">2023-09-05</span><span class="xml-tag">&lt;/lastmod&gt;</span>
+    <span class="xml-tag">&lt;changefreq&gt;</span><span class="xml-value">weekly</span><span class="xml-tag">&lt;/changefreq&gt;</span>
+    <span class="xml-tag">&lt;priority&gt;</span><span class="xml-value">0.7</span><span class="xml-tag">&lt;/priority&gt;</span>
+  <span class="xml-tag">&lt;/url&gt;</span>
+
+  <span class="xml-comment">&lt;!-- Contact Pages --&gt;</span>
+  <span class="xml-tag">&lt;url&gt;</span>
+    <span class="xml-tag">&lt;loc&gt;</span><span class="xml-value">https://www.berkshireemergencyplumbers.example.com/contact/</span><span class="xml-tag">&lt;/loc&gt;</span>
+    <span class="xml-tag">&lt;lastmod&gt;</span><span class="xml-value">2023-09-12</span><span class="xml-tag">&lt;/lastmod&gt;</span>
+    <span class="xml-tag">&lt;changefreq&gt;</span><span class="xml-value">monthly</span><span class="xml-tag">&lt;/changefreq&gt;</span>
+    <span class="xml-tag">&lt;priority&gt;</span><span class="xml-value">0.9</span><span class="xml-tag">&lt;/priority&gt;</span>
+  <span class="xml-tag">&lt;/url&gt;</span>
+  
+  <span class="xml-tag">&lt;url&gt;</span>
+    <span class="xml-tag">&lt;loc&gt;</span><span class="xml-value">https://www.berkshireemergencyplumbers.example.com/contact/emergency/</span><span class="xml-tag">&lt;/loc&gt;</span>
+    <span class="xml-tag">&lt;lastmod&gt;</span><span class="xml-value">2023-09-01</span><span class="xml-tag">&lt;/lastmod&gt;</span>
+    <span class="xml-tag">&lt;changefreq&gt;</span><span class="xml-value">monthly</span><span class="xml-tag">&lt;/changefreq&gt;</span>
+    <span class="xml-tag">&lt;priority&gt;</span><span class="xml-value">1.0</span><span class="xml-tag">&lt;/priority&gt;</span>
+  <span class="xml-tag">&lt;/url&gt;</span>
+
+  <span class="xml-comment">&lt;!-- Legal Pages --&gt;</span>
+  <span class="xml-tag">&lt;url&gt;</span>
+    <span class="xml-tag">&lt;loc&gt;</span><span class="xml-value">https://www.berkshireemergencyplumbers.example.com/privacy-policy/</span><span class="xml-tag">&lt;/loc&gt;</span>
+    <span class="xml-tag">&lt;lastmod&gt;</span><span class="xml-value">2023-01-15</span><span class="xml-tag">&lt;/lastmod&gt;</span>
+    <span class="xml-tag">&lt;changefreq&gt;</span><span class="xml-value">yearly</span><span class="xml-tag">&lt;/changefreq&gt;</span>
+    <span class="xml-tag">&lt;priority&gt;</span><span class="xml-value">0.3</span><span class="xml-tag">&lt;/priority&gt;</span>
+  <span class="xml-tag">&lt;/url&gt;</span>
+  
+  <span class="xml-tag">&lt;url&gt;</span>
+    <span class="xml-tag">&lt;loc&gt;</span><span class="xml-value">https://www.berkshireemergencyplumbers.example.com/terms-of-service/</span><span class="xml-tag">&lt;/loc&gt;</span>
+    <span class="xml-tag">&lt;lastmod&gt;</span><span class="xml-value">2023-01-15</span><span class="xml-tag">&lt;/lastmod&gt;</span>
+    <span class="xml-tag">&lt;changefreq&gt;</span><span class="xml-value">yearly</span><span class="xml-tag">&lt;/changefreq&gt;</span>
+    <span class="xml-tag">&lt;priority&gt;</span><span class="xml-value">0.3</span><span class="xml-tag">&lt;/priority&gt;</span>
+  <span class="xml-tag">&lt;/url&gt;</span>
+
+<span class="xml-tag">&lt;/urlset&gt;</span></code></pre>
             </div>
         </div>
+        
+        <div class="actions">
+            <a href="#" class="btn" id="copyButton"><i class="fas fa-copy"></i> Copy XML Code</a>
+            <a href="#" class="btn btn-secondary" id="downloadButton"><i class="fas fa-download"></i> Download as XML</a>
+        </div>
+        
+        <footer>
+            <p>Berkshire Emergency Plumbers &copy; 2023 | Email: berkshireemergencyplumbers@toolbox.ovh | Phone: 07869990011</p>
+        </footer>
     </div>
 
     <script>
-        // Simple animation for the sitemap
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('.section');
-            const footerPages = document.querySelectorAll('.footer-page');
+        document.getElementById('copyButton').addEventListener('click', function(e) {
+            e.preventDefault();
+            const xmlCode = document.querySelector('pre').textContent;
             
-            // Animate sections
-            sections.forEach((section, index) => {
+            navigator.clipboard.writeText(xmlCode).then(() => {
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                
                 setTimeout(() => {
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                }, 200 * index);
+                    this.innerHTML = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
             });
+        });
+        
+        document.getElementById('downloadButton').addEventListener('click', function(e) {
+            e.preventDefault();
+            const xmlCode = document.querySelector('pre').textContent;
+            const blob = new Blob([xmlCode], { type: 'application/xml' });
+            const url = URL.createObjectURL(blob);
             
-            // Animate footer pages
-            footerPages.forEach((page, index) => {
-                setTimeout(() => {
-                    page.style.opacity = '1';
-                    page.style.transform = 'translateY(0)';
-                }, 1200 + 100 * index);
-            });
-            
-            // Set initial state for animation
-            sections.forEach(section => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            });
-            
-            footerPages.forEach(page => {
-                page.style.opacity = '0';
-                page.style.transform = 'translateY(20px)';
-                page.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            });
-            
-            // Animate home page
-            const homePage = document.querySelector('.home-page');
-            homePage.style.opacity = '0';
-            homePage.style.transform = 'scale(0.9)';
-            homePage.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'sitemap.xml';
+            document.body.appendChild(a);
+            a.click();
             
             setTimeout(() => {
-                homePage.style.opacity = '1';
-                homePage.style.transform = 'scale(1)';
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
             }, 100);
         });
     </script>

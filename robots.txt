@@ -1,0 +1,9 @@
+# Robots.txt for BA Plumbing 24/7
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /tmp/
+Disallow: /private/
+Crawl-delay: 2
+Sitemap: https://www.baplumbing247.co.uk/sitemap.xml

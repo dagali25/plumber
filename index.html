@@ -165,7 +165,12 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: var(--transition);
+            transition: transform 0.4s ease, background-color 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        header.hide-header {
+            transform: translateY(-100%);
         }
         
         .header-container {
@@ -829,7 +834,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header id="main-header">
         <div class="container header-container">
             <div class="logo">
                 <h1>Berkshire <span>Emergency Plumbers</span></h1>
@@ -1170,9 +1175,21 @@
             this.reset();
         });
         
-        // Sticky Header
+        // Sticky Header with Hide on Scroll
+        let lastScrollY = window.scrollY;
+        const header = document.getElementById('main-header');
+        
         window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
+            // Show/hide header based on scroll direction
+            if (window.scrollY > lastScrollY && window.scrollY > 150) {
+                // Scrolling down - hide header
+                header.classList.add('hide-header');
+            } else {
+                // Scrolling up - show header
+                header.classList.remove('hide-header');
+            }
+            
+            // Add shadow when scrolled
             if (window.scrollY > 50) {
                 header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
                 header.style.background = '#fff';
@@ -1180,6 +1197,34 @@
                 header.style.boxShadow = 'var(--shadow)';
                 header.style.background = '#fff';
             }
+            
+            lastScrollY = window.scrollY;
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Calculate position considering fixed header
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('nav-menu').classList.remove('active');
+                }
+            });
         });
     </script>
 </body>
